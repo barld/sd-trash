@@ -1,0 +1,7 @@
+<mat-form-field>
+  <mat-select [(value)]="selectedPlace">
+    <mat-option *ngFor="let place of placeStream | async" [value]="place">{{place.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<a *ngIf="selectedPlace" routerLink="/place/{{selectedPlace.selectionName}}">bekijk plaats</a>
