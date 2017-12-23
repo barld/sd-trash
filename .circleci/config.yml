@@ -34,6 +34,6 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: yarn ng build -prod -aot
+      - run: yarn ng build -prod -aot --no-progress
 
 
