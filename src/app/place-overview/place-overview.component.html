@@ -1,3 +1,15 @@
-<p>
-  place-overview works!
-</p>
+<div>
+  <h1 *ngIf="place">Hieronder staan de afvallegingen van {{place.name}}</h1>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let emptying of emptyings" [expanded]="emptying === emptyings[0]">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{emptying.emtying.container}} wordt geleegd
+        </mat-panel-title>
+        <mat-panel-description>
+          {{emptying.date | date}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
