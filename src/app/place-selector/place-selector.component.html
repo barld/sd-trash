@@ -1,7 +1,13 @@
-<mat-form-field>
-  <mat-select [(value)]="selectedPlace">
-    <mat-option *ngFor="let place of placeStream | async" [value]="place">{{place.name}}</mat-option>
-  </mat-select>
-</mat-form-field>
+<header>
+  <p>selecteer jou plaats</p>
 
-<a *ngIf="selectedPlace" routerLink="/place/{{selectedPlace.selectionName}}">bekijk plaats</a>
+  <mat-form-field>
+    <mat-select [(value)]="selectedPlace">
+      <mat-option *ngFor="let place of placeStream | async" [value]="place">{{place.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <a [disabled]="!selectedPlace" routerLink="/place/{{selectedPlace ? selectedPlace.selectionName: ''}}" mat-raised-button color="primary">
+    bekijk plaats
+  </a>
+</header>

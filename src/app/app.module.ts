@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
 
 import { AppComponent } from './app.component';
 import { PlaceSelectorComponent } from './place-selector/place-selector.component';
@@ -25,7 +26,10 @@ import { PlaceOverviewComponent } from './place-overview/place-overview.componen
     // material modules
     MatToolbarModule,
     MatSelectModule,
-    AppRoutingModule
+    MatButtonModule,
+
+    // routing as last
+    AppRoutingModule,
   ],
   providers: [PlaceSelectorService],
   bootstrap: [AppComponent]
