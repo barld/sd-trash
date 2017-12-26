@@ -6,6 +6,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatExpansionModule} from '@angular/material';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { PlaceSelectorComponent } from './place-selector/place-selector.component';
@@ -30,6 +32,8 @@ import { PlaceOverviewService } from './place-overview/place-overview.service';
     MatSelectModule,
     MatButtonModule,
     MatExpansionModule,
+    MatListModule,
+    MatIconModule,
 
     // routing as last
     AppRoutingModule,
