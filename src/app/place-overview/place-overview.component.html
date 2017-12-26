@@ -1,5 +1,5 @@
 <div>
-  <h1 *ngIf="place">Hieronder staan de afvallegingen van {{place.name}}</h1>
+  <h1 *ngIf="place">Hieronder staan de afvalinzamelingen van {{place.name}}</h1>
   <mat-accordion>
     <mat-expansion-panel *ngFor="let emptying of emptyings" [expanded]="emptying === emptyings[0]">
       <mat-expansion-panel-header>

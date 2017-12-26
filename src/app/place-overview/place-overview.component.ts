@@ -20,9 +20,9 @@ export class PlaceOverviewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const placeSelector = this.route.snapshot.paramMap.get('place');
-    this.placeOverviewService.getPlaceByPlaceSelector(placeSelector)
+    this.route.params
       .pipe(
+        switchMap(params => this.placeOverviewService.getPlaceByPlaceSelector(params['place'])),
         switchMap(place => {
           this.place = place;
           return this.placeOverviewService.getNextNTrashEmptys(3, place);
