@@ -33,11 +33,20 @@ export const places: Place[] = [
     {
         name: 'Bruinisse (dorp)',
         emptyings: [
-            {container: 'rest', week: weekType.even, dayOfWeek: dayOfWeek.thursday },
-            {container: 'plastic', week: weekType.unEven, dayOfWeek: dayOfWeek.wednesday },
-            {container: 'GFT', week: weekType.unEven, dayOfWeek: dayOfWeek.thursday }
+            { container: 'rest', week: weekType.even, dayOfWeek: dayOfWeek.thursday },
+            { container: 'plastic', week: weekType.unEven, dayOfWeek: dayOfWeek.wednesday },
+            { container: 'GFT', week: weekType.unEven, dayOfWeek: dayOfWeek.thursday }
         ],
         selectionName: 'bruinisse_dorp'
+    },
+    {
+        name: 'Burgh-Haamstede',
+        emptyings: [
+            { container: 'rest', week: weekType.even, dayOfWeek: dayOfWeek.monday },
+            { container: 'plastic', week: weekType.even, dayOfWeek: dayOfWeek.wednesday },
+            { container: 'GFT', week: weekType.unEven, dayOfWeek: dayOfWeek.monday }
+        ],
+        selectionName: 'burgh_haamstede'
     }
 ];
 
