@@ -1,15 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Place, places, TrashEmptying } from '../logic/places';
+import { Place, places, TrashEmptying } from './logic/places';
 
 import { of } from 'rxjs/observable/of';
 
-import '../logic/weekNumbers';
+import './logic/weekNumbers';
+import { map } from 'rxjs/operators';
 
 @Injectable()
-export class PlaceOverviewService {
+export class PlaceService {
 
-  constructor() { }
+  activePlace: Place;
+
+  constructor(
+  ) { }
+
+  public getPlaces(): Observable<Place[]> {
+    return new Observable(subscriber => subscriber.next(places));
+  }
 
   getPlaceByPlaceSelector(place_selector: string): Observable<Place> {
     return of(places.find(place => place.selectionName === place_selector));
@@ -17,7 +25,7 @@ export class PlaceOverviewService {
 
   getNextNTrashEmptys(n: number, place: Place) {
     const today = new Date();
-    let emptyings: {date: Date, emtying: TrashEmptying}[] = [];
+    let emptyings: { date: Date, emtying: TrashEmptying }[] = [];
 
     for (let i = 0; emptyings.length < n; i++) {
       const d = new Date(today.getTime());
@@ -25,13 +33,13 @@ export class PlaceOverviewService {
 
       if (d.getTime() < new Date(2018, 0).getTime()) {
         continue;
-      }  else if (d.getTime() > new Date(2019, 0).getTime()) {
+      } else if (d.getTime() > new Date(2019, 0).getTime()) {
         break;
       }
 
       const empt = this.getTrashEmpty(d, place);
       if (empt) {
-        emptyings = [...emptyings, {date: d, emtying: empt}];
+        emptyings = [...emptyings, { date: d, emtying: empt }];
       }
     }
 

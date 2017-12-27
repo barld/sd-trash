@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PlaceOverviewService } from './place-overview.service';
 import { Place, TrashEmptying } from '../logic/places';
 
 import { switchMap } from 'rxjs/operators';
+import { PlaceService } from '../place.service';
 
 @Component({
   selector: 'app-place-overview',
@@ -16,16 +16,17 @@ export class PlaceOverviewComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private placeOverviewService: PlaceOverviewService
+    private placeService: PlaceService
   ) { }
 
   ngOnInit() {
     this.route.params
       .pipe(
-        switchMap(params => this.placeOverviewService.getPlaceByPlaceSelector(params['place'])),
+        switchMap(params => this.placeService.getPlaceByPlaceSelector(params['place'])),
         switchMap(place => {
           this.place = place;
-          return this.placeOverviewService.getNextNTrashEmptys(3, place);
+          this.placeService.activePlace = place;
+          return this.placeService.getNextNTrashEmptys(3, place);
         })
       ).subscribe(
         emptyings => this.emptyings = emptyings

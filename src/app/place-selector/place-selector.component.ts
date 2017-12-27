@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Place } from '../logic/places';
 import { Observable } from 'rxjs/Observable';
-import { PlaceSelectorService } from './place-selector.service';
+import { PlaceService } from '../place.service';
+import { switchMap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-place-selector',
@@ -10,15 +12,23 @@ import { PlaceSelectorService } from './place-selector.service';
 })
 export class PlaceSelectorComponent implements OnInit {
 
-  selectedPlace: Place;
+  get selectedPlace() {
+    return this.placeService.activePlace;
+  }
+  set selectedPlace(value) {
+    this.router.navigate(['place', value.selectionName]);
+  }
+
+
   placeStream: Observable<Place[]>;
 
   constructor(
-    private placeSelectorService: PlaceSelectorService
+    private placeService: PlaceService,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    this.placeStream = this.placeSelectorService.getPlaces();
+    this.placeStream = this.placeService.getPlaces();
   }
 
 }
