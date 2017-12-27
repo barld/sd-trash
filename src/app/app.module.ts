@@ -15,6 +15,11 @@ import { AppRoutingModule } from './/app-routing.module';
 import { PlaceOverviewComponent } from './place-overview/place-overview.component';
 import { PlaceService } from './place.service';
 
+import { registerLocaleData } from '@angular/common';
+import localeNl from '@angular/common/locales/nl';
+
+// the second parameter 'fr' is optional
+registerLocaleData(localeNl, 'nl');
 
 @NgModule({
   declarations: [

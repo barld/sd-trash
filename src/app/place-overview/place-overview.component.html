@@ -1,10 +1,10 @@
 <div>
-  <h1 *ngIf="place">Hieronder staan de afvalinzamelingen van {{place.name}}</h1>
+  <h2 *ngIf="place">afvalinzamelingen van {{place.name}}</h2>
   <mat-list>
     <mat-list-item *ngFor="let emptying of emptyings" >
       <mat-icon [ngClass]="emptying.emtying.container" mat-list-icon>delete</mat-icon>
       <h4 mat-line><strong>{{emptying.emtying.container}}</strong> wordt geleegd</h4>
-      <p mat-line> {{emptying.date | date}} </p>
+      <p mat-line> {{emptying.date | date: 'EEEE d LLLL':'':'nl'}} </p>
     </mat-list-item>
   </mat-list>
 </div>
