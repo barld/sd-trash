@@ -29,7 +29,17 @@ export interface Place {
     selectionName: string;
 }
 
-export const places: Place[] = [
+function placeCompare(p1: Place, p2: Place): -1 | 0 | 1 {
+    if (p1.name > p2.name) {
+        return 1;
+    } else if (p1.name < p2.name) {
+        return -1;
+    } else {
+        return 0;
+    }
+}
+
+const _places: Place[] = [
     {
         name: 'Bruinisse (dorp)',
         emptyings: [
@@ -184,4 +194,6 @@ export const places: Place[] = [
         selectionName: 'zonnemaire'
     },
 ];
+
+export const places = _places.sort(placeCompare);
 
