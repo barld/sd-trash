@@ -22,6 +22,13 @@ export class PlaceOverviewService {
     for (let i = 0; emptyings.length < n; i++) {
       const d = new Date(today.getTime());
       d.setDate(d.getDate() + i);
+
+      if (d.getTime() < new Date(2018, 0).getTime()) {
+        continue;
+      }  else if (d.getTime() > new Date(2019, 0).getTime()) {
+        break;
+      }
+
       const empt = this.getTrashEmpty(d, place);
       if (empt) {
         emptyings = [...emptyings, {date: d, emtying: empt}];
