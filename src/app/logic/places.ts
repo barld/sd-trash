@@ -193,6 +193,78 @@ const _places: Place[] = [
         ],
         selectionName: 'zonnemaire'
     },
+    {
+        name: 'Dreischor',
+        emptyings: [
+            { container: 'rest', week: weekType.even, dayOfWeek: dayOfWeek.thursday },
+            { container: 'plastic', week: weekType.unEven, dayOfWeek: dayOfWeek.wednesday },
+            { container: 'GFT', week: weekType.unEven, dayOfWeek: dayOfWeek.thursday }
+        ],
+        selectionName: 'dreischor'
+    },
+    {
+        name: 'Zierikzee centrum',
+        emptyings: [
+            { container: 'rest', week: weekType.even, dayOfWeek: dayOfWeek.thursday },
+            { container: 'plastic', week: weekType.unEven, dayOfWeek: dayOfWeek.wednesday },
+            { container: 'GFT', week: weekType.unEven, dayOfWeek: dayOfWeek.thursday }
+        ],
+        selectionName: 'zierikzee_centrum'
+    },
+    {
+        name: 'Bruinisse (buitengebied)',
+        emptyings: [
+            { container: 'rest', week: weekType.unEven, dayOfWeek: dayOfWeek.friday },
+            { container: 'plastic', week: weekType.unEven, dayOfWeek: dayOfWeek.wednesday },
+            { container: 'GFT', week: weekType.even, dayOfWeek: dayOfWeek.friday }
+        ],
+        selectionName: 'bruinisse_buitengebied'
+    },
+    {
+        name: 'Dreischor (buitengebied)',
+        emptyings: [
+            { container: 'rest', week: weekType.unEven, dayOfWeek: dayOfWeek.friday },
+            { container: 'plastic', week: weekType.unEven, dayOfWeek: dayOfWeek.wednesday },
+            { container: 'GFT', week: weekType.even, dayOfWeek: dayOfWeek.friday }
+        ],
+        selectionName: 'dreischor_buitengebied'
+    },
+    {
+        name: 'Nieuwerkerk',
+        emptyings: [
+            { container: 'rest', week: weekType.unEven, dayOfWeek: dayOfWeek.friday },
+            { container: 'plastic', week: weekType.unEven, dayOfWeek: dayOfWeek.wednesday },
+            { container: 'GFT', week: weekType.even, dayOfWeek: dayOfWeek.friday }
+        ],
+        selectionName: 'nieuwerkerk'
+    },
+    {
+        name: 'Ouwerkerk',
+        emptyings: [
+            { container: 'rest', week: weekType.unEven, dayOfWeek: dayOfWeek.friday },
+            { container: 'plastic', week: weekType.unEven, dayOfWeek: dayOfWeek.wednesday },
+            { container: 'GFT', week: weekType.even, dayOfWeek: dayOfWeek.friday }
+        ],
+        selectionName: 'ouwerkerk'
+    },
+    {
+        name: 'Oosterland',
+        emptyings: [
+            { container: 'rest', week: weekType.unEven, dayOfWeek: dayOfWeek.friday },
+            { container: 'plastic', week: weekType.unEven, dayOfWeek: dayOfWeek.wednesday },
+            { container: 'GFT', week: weekType.even, dayOfWeek: dayOfWeek.friday }
+        ],
+        selectionName: 'oosterland'
+    },
+    {
+        name: 'Sirjansland',
+        emptyings: [
+            { container: 'rest', week: weekType.unEven, dayOfWeek: dayOfWeek.friday },
+            { container: 'plastic', week: weekType.unEven, dayOfWeek: dayOfWeek.wednesday },
+            { container: 'GFT', week: weekType.even, dayOfWeek: dayOfWeek.friday }
+        ],
+        selectionName: 'sirjansland'
+    },
 ];
 
 export const places = _places.sort(placeCompare);
