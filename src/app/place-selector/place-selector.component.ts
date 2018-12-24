@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Place } from '../logic/places';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { PlaceService } from '../place.service';
-import { switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Component({

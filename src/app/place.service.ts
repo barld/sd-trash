@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Place, places, TrashEmptying } from './logic/places';
 
-import { of } from 'rxjs/observable/of';
+
 
 import './logic/weekNumbers';
-import { map } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable()
 export class PlaceService {
@@ -33,7 +33,7 @@ export class PlaceService {
 
       if (d.getTime() < new Date(2018, 0).getTime()) {
         continue;
-      } else if (d.getTime() > new Date(2019, 0).getTime()) {
+      } else if (d.getTime() > new Date(2020, 0).getTime()) {
         break;
       }
 
